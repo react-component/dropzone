@@ -1,0 +1,22 @@
+@import "../assets/index.css";
+.dropzone {
+  border: 2px dashed #0087F7;
+  border-radius: 5px;
+  background: white;
+  min-height: 100px;
+  padding: 24px 54px;
+  box-sizing: border-box;
+}
+.dz-message {
+  font-weight: 400;
+  text-align: center;
+  margin: 2em 0;
+  font-size: 20px;
+  vertical-align: middle;
+}
+.note {
+  font-size: 0.8em;
+  font-weight: 200;
+  display: block;
+  margin-top: 1.4rem;
+}
