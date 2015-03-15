@@ -57,6 +57,7 @@
     "less"
   ],
   "dependencies": {
-    "superagent": "^0.21.0"
+    "superagent": "^0.21.0",
+    "uid": "0.0.2"
   }
 }
