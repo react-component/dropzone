@@ -1,6 +1,6 @@
 {
   "name": "rc-dropzone",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "dropzone ui component for react",
   "keywords": [
     "react",
@@ -20,6 +20,9 @@
   "licenses": "MIT",
   "spm": {
     "dependencies": {
+      "superagent": "1.1.0",
+      "uid": "0.0.2",
+      "import-style": "1.0.0",
       "react": "*"
     },
     "buildArgs": "--global react:window.React"
