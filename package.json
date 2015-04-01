@@ -23,7 +23,11 @@
       "superagent": "1.1.0",
       "uid": "0.0.2",
       "import-style": "1.0.0",
-      "react": "*"
+      "react": "*",
+      "flux": "2.0.1",
+      "keymirror": "0.1.0",
+      "object-assign": "2.0.0",
+      "events": "1.0.1"
     },
     "buildArgs": "--global react:window.React"
   },
@@ -60,6 +64,10 @@
     "less"
   ],
   "dependencies": {
+    "events": "^1.0.2",
+    "flux": "^2.0.1",
+    "keymirror": "^0.1.1",
+    "object-assign": "^2.0.0",
     "superagent": "^0.21.0",
     "uid": "0.0.2"
   }
