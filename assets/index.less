@@ -400,7 +400,26 @@
   -o-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);
   animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);
 }
-.dropzone .dz-preview .dz-success-mark, .dropzone .dz-preview .dz-error-mark {
+
+.dz-error-mark span,
+.dz-success-mark span {
+  font-size: 36px;
+}
+.dz-success-mark span {
+  color: rgba(30, 148, 30, 0.83);
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  border-radius: 20px;
+ }
+.dz-error-mark span {
+  color: #be2626;
+}
+
+.dropzone .dz-preview .dz-success-mark,
+.dropzone .dz-preview .dz-error-mark {
   pointer-events: none;
   opacity: 0;
   z-index: 500;

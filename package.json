@@ -1,6 +1,6 @@
 {
   "name": "rc-dropzone",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "dropzone ui component for react",
   "keywords": [
     "react",
@@ -21,7 +21,6 @@
   "spm": {
     "dependencies": {
       "superagent": "1.1.0",
-      "uid": "0.0.2",
       "import-style": "1.0.0",
       "react": "*",
       "flux": "2.0.1",
@@ -68,7 +67,6 @@
     "flux": "^2.0.1",
     "keymirror": "^0.1.1",
     "object-assign": "^2.0.0",
-    "superagent": "^0.21.0",
-    "uid": "0.0.2"
+    "superagent": "^0.21.0"
   }
 }
