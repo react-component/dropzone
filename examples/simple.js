@@ -29,12 +29,15 @@ var dropzone = React.render(
   document.getElementById('__react-content')
 );
 
+dropzone.addChangeListener(function(payload) {
+  console.log(payload);
+});
+
 function success(urls) {
   console.log(urls);
 }
 
 function error(e, file) {
-  console.log(e);
   setTimeout(function() {
     dropzone.remove(file);
   }, 3000);
