@@ -1,38 +1,134 @@
 /** @jsx React.DOM */
 
 var expect = require('expect.js');
-require('../index');
+var Dropzone = require('../index');
 var DzPreview = require('../lib/DzPreview');
+var FileInput = require('../lib/FileInput');
+var sinon = require('sinon');
 var React = require('react/addons');
 var TestUtils = React.addons.TestUtils;
 var getByClass = TestUtils.findRenderedDOMComponentWithClass;
 
+var fakeDom = require('./utils/fakeDom');
+var fakeRequest = require('./utils/request');
+var request = require('superagent');
+
+function wait(time) {
+  time = time || 10;
+  return new Promise(function(resolve) {
+    setTimeout(function() {
+      resolve();
+    }, time);
+  });
+}
+
 describe('Dropzone', function () {
-  var preview;
-  var file = {
-    size: 1234,
-    name: 'demo.jpg',
-    thumbnail: 'https://t.alipayobjects.com/tfscom/T1Yy4eXd8cXXXXXXXX.png'
-  };
   var container = document.createElement('div');
   document.body.appendChild(container);
-
-  function render() {
-    return new Promise(function(resolve, reject) {
-      React.render(<div className="dropzone">
-        <DzPreview file={file} />
-        </div>, container, function() {
-        preview = this;
-        resolve();
-      });
-    });
-  }
 
   afterEach(function () {
      React.unmountComponentAtNode(container);
   });
 
+  describe('Dropzone', function() {
+    var self;
+    var input;
+    var isAccpte = true;
+    function accept(file) {
+      if (isAccpte === true) {
+        return Promise.resolve(file);
+      }
+      return Promise.reject(isAccpte);
+    }
+
+    var config = {accept: accept};
+
+    beforeEach(function(done) {
+      React.render(<Dropzone action="a.do" accept={config.accept}/>, container, function() {
+        input = TestUtils.findRenderedDOMComponentWithTag(this, 'input');
+        self = this;
+        done();
+      });
+    });
+    afterEach(function() {
+      request.post.restore();
+    });
+
+    it('upload success', function(done) {
+      var ret = {text: 'ok', status: 200};
+      sinon.stub(request, 'post', fakeRequest.post(ret));
+      wait()
+      .then(function() {
+        TestUtils.Simulate.change(input.getDOMNode(), {target: fakeDom});
+        return wait(100);
+      })
+      .then(function() {
+        expect(request.post.calledOnce).eql(true);
+        expect(request.post.calledWith('a.do')).eql(true);
+        var preview = getByClass(self, 'dz-preview');
+        expect(preview.props.className).to.contain('dz-success dz-complete');
+        done();
+      })
+      .catch(done);
+    });
+
+    it('upload error', function(done) {
+      var ret = {text: 'error', status: 400};
+      sinon.stub(request, 'post', fakeRequest.post(ret));
+      wait()
+      .then(function() {
+        TestUtils.Simulate.change(input.getDOMNode(), {target: fakeDom});
+        return wait(100);
+      })
+      .then(function() {
+        expect(request.post.calledOnce).eql(true);
+        var preview = getByClass(self, 'dz-preview');
+        expect(preview.props.className).to.contain('dz-error dz-complete');
+        done();
+      })
+      .catch(done);
+    });
+
+    it('config accept error', function(done) {
+      var ret = {text: 'error', status: 400};
+      isAccpte = 'not ok';
+      sinon.stub(request, 'post', fakeRequest.post(ret));
+      wait()
+      .then(function() {
+        TestUtils.Simulate.change(input.getDOMNode(), {target: fakeDom});
+        expect(request.post.calledOnce).to.eql(false);
+        return wait();
+      })
+      .then(function() {
+        var preview = getByClass(self, 'dz-preview');
+        expect(preview.props.className).to.contain('dz-error dz-complete');
+        done();
+      })
+      .catch(done);
+    });
+
+  });
+
   describe('DzPreview', function() {
+    var preview;
+    var file = {
+      size: 1234,
+      name: 'demo.jpg',
+      thumbnail: 'https://t.alipayobjects.com/tfscom/T1Yy4eXd8cXXXXXXXX.png'
+    };
+
+    function render() {
+      return new Promise(function(resolve) {
+        React.render(<div className="dropzone">
+          <DzPreview file={file} />
+          </div>, container, function() {
+            var self = this;
+            preview = self;
+          resolve();
+        });
+      });
+    }
+
     it('start upload state', function(done) {
       render()
       .then(function() {
@@ -82,6 +178,27 @@ describe('Dropzone', function () {
         done();
       })
       .catch(done);
+    });
+  });
+
+  describe('FileInput', function() {
+    var input;
+    var upload;
+    beforeEach(function(done) {
+      upload = sinon.stub();
+      React.render(<div className="dropzone">
+        <FileInput upload={upload} />
+        </div>, container, function() {
+        input = TestUtils.findRenderedDOMComponentWithTag(this, 'input');
+        done();
+      });
+    });
+
+    it('basic', function() {
+      TestUtils.Simulate.change(input.getDOMNode(), {target: fakeDom});
+      expect(upload.calledOnce).to.ok;
+      expect(upload.calledWith(fakeDom.files[0])).to.ok;
+      expect(fakeDom.value).to.eql('');
     });
   });
 });

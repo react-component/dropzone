@@ -19,8 +19,8 @@
     "esnext": true,
     "globals": {
         "describe": false,
-        "expect": false,
         "beforeEach": false,
+        "File": true,
         "afterEach": false,
         "modulex": false,
         "it": false
