@@ -1,6 +1,14 @@
 // fake dom, use to fake input which choose an img file
 'use strict';
 
+var isLowWebkit = false;
+if (!window.Promise) {
+  isLowWebkit = true;
+  require('./Blob');
+  var Promise = require('./promise');
+  window.Promise = Promise;
+}
+
 var fakeDom = {
   files: [],
   value: 'world.html'
@@ -37,7 +45,17 @@ function b64toBlob(b64Data, contentType, sliceSize) {
 }
 
 var type = 'image/png';
-var imgFile = new File([b64toBlob(img, type)], 'a.png', {type: type});
+var imgFile;
+if (isLowWebkit) {
+  imgFile = {
+    type: 'text/string',
+    name: 'a.js',
+    size: 12323
+  };
+} else {
+  imgFile = new File([b64toBlob(img, type)], 'a.png', {type: type});
+}
+
 fakeDom.files[0] = imgFile;
 
 module.exports = fakeDom;

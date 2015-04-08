@@ -1,6 +1,7 @@
 /** @jsx React.DOM */
 
 var expect = require('expect.js');
+var fakeDom = require('./utils/fakeDom');
 var Dropzone = require('../index');
 var DzPreview = require('../lib/DzPreview');
 var FileInput = require('../lib/FileInput');
@@ -9,7 +10,6 @@ var React = require('react/addons');
 var TestUtils = React.addons.TestUtils;
 var getByClass = TestUtils.findRenderedDOMComponentWithClass;
 
-var fakeDom = require('./utils/fakeDom');
 var fakeRequest = require('./utils/request');
 var request = require('superagent');
 
