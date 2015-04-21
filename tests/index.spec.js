@@ -156,9 +156,6 @@ describe('Dropzone', function () {
       file.done = true;
       render()
       .then(function() {
-        var progress = TestUtils.scryRenderedDOMComponentsWithClass(preview,
-          'dz-upload');
-        expect(progress.length).to.eql(0);
         var box = getByClass(preview, 'dz-preview');
         expect(box.props.className).to.contain('dz-success');
         done();
