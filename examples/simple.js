@@ -38,8 +38,5 @@ function success(urls) {
 }
 
 function error(e, file) {
-  setTimeout(function() {
-    dropzone.remove(file);
-  }, 3000);
 }
 
