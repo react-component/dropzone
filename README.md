@@ -35,45 +35,28 @@ dropzone for react.
 var Rcdropzone = require('rc-dropzone');
 var React = require('react');
 
-function accept(file) {
-  if (file.type.indexOf('image/') > -1) {
-    return Promise.resolve();
-  }
-  return Promise.reject('只允许上传图片文件');
-}
-
 React.render(
-  <Dropzone action="http://127.0.0.1:3000/" accept={accept}>
+  <Dropzone action="http://127.0.0.1:3000/">
     <div className="dz-message">
       Drop files here or click to upload.<br/>
       <span className="note">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
     </div>
   </Dropzone>,
   document.getElementById('__react-content'));
+```
 
 ## API
 
 ### props
 
-<table class="table table-bordered table-striped">
-    <thead>
-    <tr>
-        <th style="width: 100px;">name</th>
-        <th style="width: 50px;">type</th>
-        <th style="width: 50px;">default</th>
-        <th>description</th>
-    </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>className</td>
-          <td>String</td>
-          <td></td>
-          <td>additional css class of root dom node</td>
-        </tr>
-    </tbody>
-</table>
-
+|name|type|默认值| 说明|
+|-----+---+--------|----|
+|paramName| string | 'file' | 文件上传参数名 |
+|accept | function | | 返回一个Promise对象 |
+|inputAccept| string | '' | file的accept参数|
+| data | object | {} | 其他参数 |
+| success | function | | 上传成功回调 |
+| error | function || 上传失败回调 |
 
 online docs: http://spmjs.io/docs/rc-dropzone/
 

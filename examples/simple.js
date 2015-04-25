@@ -14,8 +14,9 @@ var data = {type: 'haha'};
 
 var dropzone = React.render(
   <Dropzone
-    action="http://127.0.0.1:3000/"
+    action="simple.html"
     accept={accept}
+    inputAccept="image/*"
     success={success}
     error={error}
     data={data}
@@ -29,14 +30,9 @@ var dropzone = React.render(
   document.getElementById('__react-content')
 );
 
-dropzone.addChangeListener(function(payload) {
-  console.log(payload);
-});
-
 function success(urls) {
   console.log(urls);
 }
 
 function error(e, file) {
 }
-
