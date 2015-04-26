@@ -9,7 +9,7 @@ dropzone ui component for react
 [![Test coverage][coveralls-image]][coveralls-url]
 [![node version][node-image]][node-url]
 
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/rc-dropzone.svg)](https://saucelabs.com/u/rc-dropzone)
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/ewardsong.svg)](https://saucelabs.com/u/ewardsong)
 
 [npm-image]: http://img.shields.io/npm/v/rc-dropzone.svg?style=flat-square
 [npm-url]: http://npmjs.org/package/rc-dropzone
