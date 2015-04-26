@@ -9,7 +9,7 @@ dropzone ui component for react
 [![Test coverage][coveralls-image]][coveralls-url]
 [![node version][node-image]][node-url]
 
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/ewardsong.svg)](https://saucelabs.com/u/ewardsong)
+[![Sauce Test Status][saucelabs-image]][saucelabs-url]
 
 [npm-image]: http://img.shields.io/npm/v/rc-dropzone.svg?style=flat-square
 [npm-url]: http://npmjs.org/package/rc-dropzone
@@ -19,7 +19,11 @@ dropzone ui component for react
 [coveralls-url]: https://coveralls.io/r/shepherdwind/rc-dropzone?branch=master
 [node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
+[saucelabs-image]: https://saucelabs.com/browser-matrix/ewardsong.svg
+[saucelabs-url]: https://saucelabs.com/u/ewardsong
 
+
+![dropzone](https://cloud.githubusercontent.com/assets/452899/7336023/99e4753a-ec18-11e4-8052-b72136deef98.gif)
 
 ## Feature
 
@@ -37,10 +41,10 @@ var React = require('react');
 
 React.render(
   <Dropzone action="http://127.0.0.1:3000/">
-    <div className="dz-message">
-      Drop files here or click to upload.<br/>
-      <span className="note">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
-    </div>
+	<div className="dz-message">
+	  Drop files here or click to upload.<br/>
+	  <span className="note">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
+	</div>
   </Dropzone>,
   document.getElementById('__react-content'));
 ```
@@ -50,13 +54,16 @@ React.render(
 ### props
 
 |name|type|默认值| 说明|
-|-----+---+--------|----|
-|paramName| string | 'file' | 文件上传参数名 |
-|accept | function | | 返回一个Promise对象 |
-|inputAccept| string | '' | file的accept参数|
-| data | object | {} | 其他参数 |
-| success | function | | 上传成功回调 |
-| error | function || 上传失败回调 |
+|-----|---|--------|----|
+|paramName| string | file | 文件上传参数名 |
+|accept | function | 接受所有文件| 返回一个Promise对象 |
+|inputAccept| string | 空字符串 | file的accept参数|
+| data | object | {} | post文件的时候，发送的其他参数 |
+| success | function |无 | 上传成功回调 |
+| error | function |无| 上传失败回调 |
+
+> 说明：accept方法必须返回一个Promise对对象，通过resolve表示成功状态，reject表示失败，
+> reject的第一个参数是错误信息.
 
 online docs: http://spmjs.io/docs/rc-dropzone/
 
