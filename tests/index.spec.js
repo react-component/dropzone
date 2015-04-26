@@ -66,7 +66,7 @@ describe('Dropzone', function () {
         expect(request.post.calledOnce).eql(true);
         expect(request.post.calledWith('a.do')).eql(true);
         var preview = getByClass(self, 'dz-preview');
-        expect(preview.props.className).to.contain('dz-success dz-complete');
+        expect(preview.props.className).to.contain('dz-success');
         done();
       })
       .catch(done);
@@ -83,7 +83,7 @@ describe('Dropzone', function () {
       .then(function() {
         expect(request.post.calledOnce).eql(true);
         var preview = getByClass(self, 'dz-preview');
-        expect(preview.props.className).to.contain('dz-error dz-complete');
+        expect(preview.props.className).to.contain('dz-error');
         done();
       })
       .catch(done);
@@ -101,7 +101,7 @@ describe('Dropzone', function () {
       })
       .then(function() {
         var preview = getByClass(self, 'dz-preview');
-        expect(preview.props.className).to.contain('dz-error dz-complete');
+        expect(preview.props.className).to.contain('dz-error');
         done();
       })
       .catch(done);
