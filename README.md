@@ -1,7 +1,7 @@
 # rc-dropzone
 ---
 
-dropzone ui component for react
+dropzone ui component for react, support for IE11+, chrome and firefox.
 
 [![NPM version][npm-image]][npm-url]
 [![SPM version](http://spmjs.io/badge/rc-dropzone)](http://spmjs.io/package/rc-dropzone)
@@ -13,15 +13,14 @@ dropzone ui component for react
 
 [npm-image]: http://img.shields.io/npm/v/rc-dropzone.svg?style=flat-square
 [npm-url]: http://npmjs.org/package/rc-dropzone
-[travis-image]: https://img.shields.io/travis/shepherdwind/rc-dropzone.svg?style=flat-square
-[travis-url]: https://travis-ci.org/shepherdwind/rc-dropzone
-[coveralls-image]: https://img.shields.io/coveralls/shepherdwind/rc-dropzone.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/shepherdwind/rc-dropzone?branch=master
+[travis-image]: https://img.shields.io/travis/react-components/dropzone.svg?style=flat-square
+[travis-url]: https://travis-ci.org/react-components/dropzone
+[coveralls-image]: https://img.shields.io/coveralls/react-components/dropzone.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/react-components/dropzone?branch=master
 [node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
 [saucelabs-image]: https://saucelabs.com/browser-matrix/ewardsong.svg
 [saucelabs-url]: https://saucelabs.com/u/ewardsong
-
 
 ![dropzone](https://cloud.githubusercontent.com/assets/452899/7336023/99e4753a-ec18-11e4-8052-b72136deef98.gif)
 
