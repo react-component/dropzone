@@ -13,10 +13,10 @@ dropzone ui component for react, support for IE11+, chrome and firefox.
 
 [npm-image]: http://img.shields.io/npm/v/rc-dropzone.svg?style=flat-square
 [npm-url]: http://npmjs.org/package/rc-dropzone
-[travis-image]: https://img.shields.io/travis/react-components/dropzone.svg?style=flat-square
-[travis-url]: https://travis-ci.org/react-components/dropzone
-[coveralls-image]: https://img.shields.io/coveralls/react-components/dropzone.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/react-components/dropzone?branch=master
+[travis-image]: https://img.shields.io/travis/react-component/dropzone.svg?style=flat-square
+[travis-url]: https://travis-ci.org/react-component/dropzone
+[coveralls-image]: https://img.shields.io/coveralls/react-component/dropzone.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/react-component/dropzone?branch=master
 [node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
 [saucelabs-image]: https://saucelabs.com/browser-matrix/ewardsong.svg
