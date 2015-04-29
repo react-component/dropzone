@@ -27,15 +27,15 @@
       "keymirror": "0.1.0",
       "object-assign": "2.0.0",
       "events": "1.0.1"
-    },
-    "buildArgs": "--global react:window.React"
+    }
   },
   "config": {
     "port": 8000
   },
   "scripts": {
-    "example": "webpack -d && rc-tools run jsx2html",
+    "build": "rc-tools run build",
     "less": "rc-tools run less",
+    "gh-pages": "rc-tools run gh-pages",
     "history": "rc-tools run history",
     "start": "node --harmony node_modules/.bin/rc-server",
     "publish": "spm publish && rc-tools run tag",
@@ -46,20 +46,13 @@
     "browser-test-cover": "rc-tools run browser-test-cover"
   },
   "devDependencies": {
-    "css-loader": "^0.9.1",
     "expect.js": "~0.3.1",
-    "file-loader": "^0.8.1",
-    "jsx-loader": "^0.12.2",
     "precommit-hook": "^1.0.7",
-    "rc-server": "^2.0.0",
-    "rc-tools": "^2.1.1",
-    "rc-util": "^2.0.2",
-    "react": "~0.12.1",
+    "rc-server": "2.x",
+    "rc-tools": "2.x",
+    "react": "~0.13.2",
     "sinon": "^1.14.1",
-    "style-loader": "^0.8.3",
-    "superagent-mock": "^1.0.0",
-    "url-loader": "^0.5.5",
-    "webpack": "~1.5.3"
+    "superagent-mock": "^1.0.0"
   },
   "precommit": [
     "lint",

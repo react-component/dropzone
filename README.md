@@ -35,7 +35,7 @@ dropzone for react.
 ## Usage
 
 ```js
-var Rcdropzone = require('rc-dropzone');
+var Dropzone = require('rc-dropzone');
 var React = require('react');
 
 React.render(
@@ -64,8 +64,6 @@ React.render(
 > 说明：accept方法必须返回一个Promise对对象，通过resolve表示成功状态，reject表示失败，
 > reject的第一个参数是错误信息.
 
-online docs: http://spmjs.io/docs/rc-dropzone/
-
 ## Development
 
 ```
@@ -75,9 +73,9 @@ npm start
 
 ## Example
 
-http://localhost:8000/examples/index.md
+http://localhost:8000/examples/
 
-online example: http://spmjs.io/docs/rc-dropzone/examples/
+online example: http://react-component.github.io/dropzone/build/examples/
 
 ## Test Case
 
