@@ -19,8 +19,8 @@ dropzone ui component for react, support for IE11+, chrome and firefox.
 [coveralls-url]: https://coveralls.io/r/react-component/dropzone?branch=master
 [node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
-[saucelabs-image]: https://saucelabs.com/browser-matrix/ewardsong.svg
-[saucelabs-url]: https://saucelabs.com/u/ewardsong
+[saucelabs-image]: https://saucelabs.com/browser-matrix/dropzone.svg
+[saucelabs-url]: https://saucelabs.com/u/dropzone
 
 ![dropzone](https://cloud.githubusercontent.com/assets/452899/7336023/99e4753a-ec18-11e4-8052-b72136deef98.gif)
 
