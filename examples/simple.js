@@ -1,5 +1,5 @@
 // use jsx to render html, do not modify simple.html
-var Dropzone = require('../lib/Dropzone');
+var Dropzone = require('rc-dropzone');
 require('../assets/index.css');
 require('./simple.css');
 var React = require('react');
@@ -14,9 +14,8 @@ var data = {type: 'haha'};
 
 var dropzone = React.render(
   <Dropzone
-    action="simple.html"
+    action="/upload.do"
     accept={accept}
-    inputAccept="image/*"
     success={success}
     error={error}
     data={data}
