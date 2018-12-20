@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "expect.js": "~0.3.1",
-    "precommit-hook": "^1.0.7",
+    "precommit-hook": "^3.0.0",
     "rc-server": "2.x",
     "rc-tools": "2.x",
     "react": "~0.13.2",
