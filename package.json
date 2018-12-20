@@ -63,6 +63,6 @@
     "flux": "^2.0.1",
     "keymirror": "^0.1.1",
     "object-assign": "^2.0.0",
-    "superagent": "^0.21.0"
+    "superagent": "^4.0.0"
   }
 }
