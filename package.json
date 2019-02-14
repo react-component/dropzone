@@ -50,7 +50,7 @@
     "precommit-hook": "^1.0.7",
     "rc-server": "2.x",
     "rc-tools": "2.x",
-    "react": "~0.13.2",
+    "react": "~16.8.2",
     "sinon": "^1.14.1",
     "superagent-mock": "^1.0.0"
   },
